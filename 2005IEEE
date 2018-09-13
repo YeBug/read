@@ -1,0 +1,14 @@
+Title：A challenging signal processing technology for biometric identification
+
+gait versus other biometric traits:
+Advantage:gait is unobtrusiveness;  can be captured at a distance
+don't need physical contact;  difficult to hide or fake
+Disadvantage：rely on a video sequence taken in controlled or uncontrolled environments
+hard to capture the critical biometric parameters
+gait changes over time
+affected by clothes,footwear,walking surface,walking speed and emotional conditioin
+
+results indicate that there is much value in combining gait with other biometrics eg.(face or foot pressure)
+
+Generic gait recongnitioin system:
+1.background subtraction  2.feature extraction  3.compare with database to recognize
