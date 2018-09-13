@@ -12,3 +12,14 @@ results indicate that there is much value in combining gait with other biometric
 
 Generic gait recongnitioin system:
 1.background subtraction  2.feature extraction  3.compare with database to recognize
+
+silhouettes extracted by using model-based method have fewer noise pixels and missing parts.
+
+gait cycle detection:
+1.线性预测的方法将正弦信号拟合到噪声提取信号中，这种方法易用于循环分区。
+2.采用前景总和信号的自相关来计算步行周期，计算总和信号的最优滤波系数
+
+model-based approaches:
+优势：测试序列与参考序列差异大
+缺陷：依赖于在步态序列中识别特定的步态参数，通常需要高质量的步态序列。
+      参数依赖度高，自我遮挡使得参数获取更困难
