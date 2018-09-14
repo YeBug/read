@@ -18,6 +18,11 @@ Error=Bias^2+Variance+Noise
 underfitting:erro 受bias影响大，训练集与模型差距大,需要redesign model
 overfitting:erro 受variance影响大，测试集与模型差距大，需要increase data/regularization
 
+梯度下降：
+从较大的learning rate进行建模
+adagrad算法计算learning rate；采用随机样本进行随机梯度下降
+问题：找到的可能是鞍点或局部最小点
+
 评估模型泛化能力：划分训练集与测试集
 划分方法：1.留出法  2.交叉验证法 3.自助法
 p28
