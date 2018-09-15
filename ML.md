@@ -107,9 +107,9 @@ plt.plot([model(x) for x in x_train])
 plt.show()
 ```
 下面是learning rate 较小的时候的拟合结果  
-![small](https://github.com/YeBug/read/blob/master/1537027380.jpg)
+![small](https://github.com/YeBug/read/blob/master/1537027380.jpg)  
 下面是调整learning rate 后的拟合结果  
-![big](https://github.com/YeBug/read/blob/master/1537027362.jpg)
+![big](https://github.com/YeBug/read/blob/master/1537027362.jpg)  
    
 从较大的learning rate进行建模  
 adagrad算法计算learning rate；采用随机样本进行随机梯度下降  
