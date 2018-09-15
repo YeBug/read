@@ -62,7 +62,7 @@ plt.plot(x_train,[model(x) for x in x_train])
 plt.show()
 -----------------------------------------------------------------
 ```
-![https://github.com/YeBug/read/blob/master/1537026574.jpg]
+![result](https://github.com/YeBug/read/blob/master/1537026574.jpg)
 
 从较大的learning rate进行建模
 adagrad算法计算learning rate；采用随机样本进行随机梯度下降
