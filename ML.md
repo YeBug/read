@@ -21,7 +21,7 @@ overfitting:erro 受variance影响大，测试集与模型差距大，需要incr
 梯度下降：  
 为了寻找建模函数中参数的最佳值，实现最佳拟合所设计的一种算法  
 从一个起始点w计算受其影响的loss函数的梯度，沿着梯度的反向对w进行移动，判断此时loss函数的梯度变化，如此迭代多次找到loss函数梯度变化趋近于0的点。  
-下面是一个简单的线性拟合案例:
+###下面是一个简单的线性拟合案例1:
 ```
 ----------------案例1---------------------------------------
 import numpy as np
@@ -62,8 +62,54 @@ plt.plot(x_train,[model(x) for x in x_train])
 plt.show()
 -----------------------------------------------------------------
 ```
-![result](https://github.com/YeBug/read/blob/master/1537026574.jpg)
+![result](https://github.com/YeBug/read/blob/master/1537026574.jpg)   
+    
+###简单线性回归，二维自变量，案例2：   
+```
+import numpy as np
+import matplotlib.pyplot as plt
 
+x_train = np.array([[1, 2],[2, 1],[2, 3],[3, 5],[1, 3],[4, 2],[7, 3],[4, 5],[11, 3],[8, 7]])
+y_train = np.array([7, 8, 10, 14, 8, 13, 20, 16, 28, 26])
+a=0
+b=0
+c=0
+lr=0.001
+m=len(x_train)
+diff=[0,0,0]
+
+def model(x):
+    return  x[0]*a+x[1]*b+c
+
+error0=0
+error1=0
+#退出迭代的两次误差差值的阈值
+epsilon=0.01
+while True:
+    diff = [0,0,0]
+    for i in range(m):
+        diff[0]+=(model(x_train[i])-y_train[i])*x_train[i][0]
+        diff[1]+=(model(x_train[i])-y_train[i])*x_train[i][1]
+        diff[2]+=model(x_train[i])-y_train[i]
+    a=a-lr*diff[0]
+    b=b-lr*diff[1]
+    c=c-lr*diff[2]
+    error1 = 0
+    for i in range(len(x_train)):
+        error1 += (y_train[i] - model(x_train[i])) ** 2
+    print(error1)
+    if abs(error1 - error0) < epsilon:
+        break
+    else:
+        error0 = error1
+    plt.plot([model(x) for x in x_train])
+
+#plt.plot(x_train,y_train,'bo')
+plt.plot([model(x) for x in x_train])
+plt.show()
+
+```
+    
 从较大的learning rate进行建模  
 adagrad算法计算learning rate；采用随机样本进行随机梯度下降  
 问题：找到的可能是鞍点或局部最小点  
