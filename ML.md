@@ -21,9 +21,8 @@ overfitting:erro 受variance影响大，测试集与模型差距大，需要incr
 梯度下降：  
 为了寻找建模函数中参数的最佳值，实现最佳拟合所设计的一种算法  
 从一个起始点w计算受其影响的loss函数的梯度，沿着梯度的反向对w进行移动，判断此时loss函数的梯度变化，如此迭代多次找到loss函数梯度变化趋近于0的点。  
-###下面是一个简单的线性拟合案例1:
+### 下面是一个简单的线性拟合案例1:
 ```
-----------------案例1---------------------------------------
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -60,11 +59,10 @@ while True:
 plt.plot(x_train,y_train,'bo')
 plt.plot(x_train,[model(x) for x in x_train])
 plt.show()
------------------------------------------------------------------
 ```
 ![result](https://github.com/YeBug/read/blob/master/1537026574.jpg)   
     
-###简单线性回归，二维自变量，案例2：   
+### 简单线性回归，二维自变量，案例2：   
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -107,9 +105,12 @@ while True:
 #plt.plot(x_train,y_train,'bo')
 plt.plot([model(x) for x in x_train])
 plt.show()
-
 ```
-    
+下面是learning rate 较小的时候的拟合结果  
+![small](https://github.com/YeBug/read/blob/master/1537027380.jpg)
+下面是调整learning rate 后的拟合结果  
+![big](https://github.com/YeBug/read/blob/master/1537027362.jpg)
+   
 从较大的learning rate进行建模  
 adagrad算法计算learning rate；采用随机样本进行随机梯度下降  
 问题：找到的可能是鞍点或局部最小点  
