@@ -111,8 +111,12 @@ plt.show()
 下面是调整learning rate 后的拟合结果  
 ![big](https://github.com/YeBug/read/blob/master/1537027362.jpg)  
    
-从较大的learning rate进行建模  
-adagrad算法计算learning rate；采用随机样本进行随机梯度下降  
+梯度下降技巧：  
+1.从较大的learning rate进行建模  
+2.adagrad算法调整learning rate；  
+3.采用随机样本进行随机梯度下降  
+4.feature scaling，让不同特征值具有相同的缩放程度  
+
 问题：找到的可能是鞍点或局部最小点  
 
 评估模型泛化能力：划分训练集与测试集  
